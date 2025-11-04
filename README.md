@@ -1,5 +1,9 @@
-# Pygame Moving Square
+# Maze Game
 
-Move a red square with arrow keys.
+This is a simple Pygame project where a red square moves through a green maze.
+I added:
+- Player starting position.
+- Maze walls and collision system.
 
-`pip install pygame` then `python game.py`
+Next step: add a goal/exit and scoring system.
+
