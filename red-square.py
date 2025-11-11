@@ -66,11 +66,6 @@ class Button:
         color = self.hover_color if self.is_hovered else self.color
         pygame.draw.rect(surface, color, self.rect, border_radius=self.border_radius)
         
-        # Add highlight effect when hovered
-        if self.is_hovered:
-            highlight = pygame.Rect(self.rect.x, self.rect.y, self.rect.width, self.rect.height//3)
-            pygame.draw.rect(surface, (255, 255, 255, 128), highlight, border_radius=self.border_radius)
-        
         # Draw text
         text_surf = button_font.render(self.text, True, self.text_color)
         text_rect = text_surf.get_rect(center=self.rect.center)
@@ -84,16 +79,16 @@ class Button:
 
 # Create styled buttons
 start_button = Button(400, 500, 200, 60, "Start Adventure", 
-                     (0, 150, 0), (0, 200, 0), border_radius=15)
+                     (0, 150, 0), (0, 255, 0), border_radius=15)
 
 level1_button = Button(400, 350, 200, 60, "Level 1", 
-                      (0, 100, 200), (0, 150, 255), border_radius=15)
+                      (0, 0, 200), (0, 255, 255), border_radius=15) #JE DOIS CHANGER 
 
 level2_button = Button(400, 450, 200, 60, "Level 2", 
                       (150, 0, 0), (255, 0, 0), border_radius=15)
 
 back_button = Button(50, 700, 120, 50, "← Back", 
-                    (100, 100, 100), (150, 150, 150), border_radius=10)
+                    (128, 128, 128), (192, 192, 192), border_radius=10)
 
 # Game elements
 player = pygame.Rect(50, 50, 40, 40)
@@ -104,6 +99,8 @@ level1_walls = [
     pygame.Rect(0, 0, 20, 800),
     pygame.Rect(980, 0, 20, 800),
     pygame.Rect(0, 780, 1000, 20),
+
+
     pygame.Rect(100, 100, 600, 20),
     pygame.Rect(100, 100, 20, 420),
     pygame.Rect(200, 480, 600, 20),
@@ -120,15 +117,25 @@ level2_walls = [
     pygame.Rect(0, 0, 20, 800),
     pygame.Rect(980, 0, 20, 800),
     pygame.Rect(0, 780, 1000, 20),
-    pygame.Rect(100, 100, 600, 20),
-    pygame.Rect(100, 100, 20, 420),
-    pygame.Rect(200, 480, 600, 20),
-    pygame.Rect(580, 200, 20, 300),
-    pygame.Rect(100, 650, 800, 20),
-    pygame.Rect(900, 100, 20, 570),
-    pygame.Rect(400, 300, 400, 20),
-    pygame.Rect(200, 380, 200, 20),
+
+
+    pygame.Rect(100, 100, 20, 300),
+    pygame.Rect(100, 100, 300, 20),
+    pygame.Rect(380, 100, 300, 20),
+    pygame.Rect(200, 200, 200, 20),
+    pygame.Rect(200, 200, 20, 200),
+    pygame.Rect(200, 380, 300, 20),
+    pygame.Rect(480, 200, 20, 200),
+    pygame.Rect(300, 300, 200, 20),
+
+    pygame.Rect(600, 100, 20, 300),
+    pygame.Rect(600, 100, 200, 20),
+    pygame.Rect(780, 100, 20, 200),
+    pygame.Rect(700, 100, 20, 200),
+    pygame.Rect(700, 200, 100, 20),
     pygame.Rect(700, 380, 200, 20),
+    pygame.Rect(880, 300, 20, 100),
+    pygame.Rect(800, 300, 100, 20),
     
 ]
 
